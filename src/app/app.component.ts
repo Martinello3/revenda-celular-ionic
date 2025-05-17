@@ -9,7 +9,8 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home'},
-    { title: 'Celulares', url: '/phones', icon: 'phone-portrait' }
+    { title: 'Celulares', url: '/phones', icon: 'phone-portrait' },
+    { title: 'Marcas', url: '/brands', icon: 'business' }
   ];
 
   constructor() { }

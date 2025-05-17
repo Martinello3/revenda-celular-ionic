@@ -48,9 +48,9 @@
   ],
   "brands": [
     {
-      "id": "1",
       "name": "Samsung",
-      "country": "Coreia do Sul"
+      "country": "Coreia do Sul",
+      "id": "1"
     },
     {
       "id": "2",
@@ -65,11 +65,6 @@
     {
       "id": "4",
       "name": "Motorola",
-      "country": "Estados Unidos"
-    },
-    {
-      "id": "5",
-      "name": "Google",
       "country": "Estados Unidos"
     }
   ]

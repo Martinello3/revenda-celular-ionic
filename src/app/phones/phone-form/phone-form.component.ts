@@ -4,8 +4,8 @@ import { dateMask, priceMask, maskitoElement, parseDateMask, formatDateMask, par
 import { ApplicationValidators } from 'src/app/core/validators/url.validator';
 import { PhoneService } from '../services/phone.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BrandService } from '../services/brand.service';
-import { Brand } from '../models/brand.type';
+import { BrandService } from 'src/app/brands/services/brand.service';
+import { Brand } from 'src/app/brands/models/brand.type';
 import { ToastController } from '@ionic/angular';
 import { maskitoParseNumber, maskitoStringifyNumber } from '@maskito/kit';
 
@@ -54,7 +54,10 @@ export class PhoneFormComponent implements OnInit {
               phone.releaseDate = formatDateMask(phone.releaseDate);
             }
             if (typeof phone.releaseDate === 'string') {
-              phone.releaseDate = formatDateMask(parseDateMask(phone.releaseDate, 'yyyy/mm/dd'));
+              const parsedDate = parseDateMask(phone.releaseDate, 'yyyy/mm/dd');
+              if (parsedDate) {
+                phone.releaseDate = formatDateMask(parsedDate);
+              }
             }
             if (phone.price && typeof phone.price === 'number') {
               phone.price = formatNumberMask(phone.price);
@@ -95,7 +98,10 @@ export class PhoneFormComponent implements OnInit {
   save() {
     let { value } = this.phoneForm;
     if (value.releaseDate) {
-      value.releaseDate = parseDateMask(value.releaseDate)
+      const parsedDate = parseDateMask(value.releaseDate);
+      if (parsedDate) {
+        value.releaseDate = parsedDate;
+      }
     }
     if (value.price) {
       value.price = parseNumberMask(value.price);

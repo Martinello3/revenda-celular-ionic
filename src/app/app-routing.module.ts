@@ -9,15 +9,19 @@ const routes: Routes = [
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'phones',
-    loadChildren: () => import('./phones/phones.module').then( m => m.PhonesPageModule)
+    loadChildren: () => import('./phones/phones.module').then(m => m.PhonesPageModule)
+  },
+  {
+    path: 'brands',
+    loadChildren: () => import('./brands/brands.module').then(m => m.BrandsPageModule)
   }
 ];
 

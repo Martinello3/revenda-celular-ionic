@@ -10,7 +10,6 @@ const dateMask = maskitoDateOptionsGenerator({ mode: 'dd/mm/yyyy', separator: '/
 const priceMask = maskitoNumberOptionsGenerator({
   decimalSeparator: ',',
   min: 0,
-  max: 1000,
   precision: 2,
   thousandSeparator: '.'
 })

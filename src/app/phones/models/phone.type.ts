@@ -1,4 +1,4 @@
-import { Brand } from "./brand.type"
+import { Brand } from "src/app/brands/models/brand.type"
 
 export type Phone = {
   id?: number,
