@@ -1,151 +1,76 @@
 {
-  "games": [
+  "phones": [
     {
-      "id": "2",
-      "title": "Tetris",
-      "category": "plataforma",
-      "image": "https://m.media-amazon.com/images/I/61M3rDwh4qL._h1_.png",
-      "launchDate": "1986-08-13T00:00:00.000Z",
-      "platforms": [],
-      "price": 1
+      "id": "1",
+      "model": "Galaxy S23",
+      "image": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s911bzgrzto/gallery/br-galaxy-s23-s911-sm-s911bzgrzto-534863-534863-535033-thumb-535033",
+      "releaseDate": "2023-02-01T03:00:00.000Z",
+      "price": 4999.99,
+      "category": "Smartphone",
+      "brands": [
+        {
+          "id": "1",
+          "name": "Samsung",
+          "country": "Coreia do Sul"
+        }
+      ]
+    },
+    {
+      "model": "iPhone 15 Pro",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845702708",
+      "releaseDate": "2023-09-22T03:00:00.000Z",
+      "price": 7999.99,
+      "category": "Smartphone",
+      "brands": [
+        {
+          "id": "1",
+          "name": "Samsung",
+          "country": "Coreia do Sul"
+        }
+      ],
+      "id": "2"
     },
     {
       "id": "3",
-      "title": "Tetris",
-      "category": "plataforma",
-      "image": null,
-      "launchDate": "1986-08-13T00:00:00.000Z",
-      "platforms": [],
-      "price": 1
+      "model": "Redmi Note 12",
+      "image": "https://i02.appmifile.com/324_operator_sg/10/03/2023/dfe3f58ef3d27ca296813610c922a5aa.png",
+      "releaseDate": "2023-03-23T03:00:00.000Z",
+      "price": 1499.99,
+      "category": "Smartphone",
+      "brands": [
+        {
+          "id": "3",
+          "name": "Xiaomi",
+          "country": "China"
+        }
+      ]
+    }
+  ],
+  "brands": [
+    {
+      "id": "1",
+      "name": "Samsung",
+      "country": "Coreia do Sul"
+    },
+    {
+      "id": "2",
+      "name": "Apple",
+      "country": "Estados Unidos"
+    },
+    {
+      "id": "3",
+      "name": "Xiaomi",
+      "country": "China"
     },
     {
       "id": "4",
-      "title": "Tetris",
-      "category": "plataforma",
-      "image": null,
-      "launchDate": "1986-08-13T00:00:00.000Z",
-      "platforms": [],
-      "price": 1
+      "name": "Motorola",
+      "country": "Estados Unidos"
     },
     {
       "id": "5",
-      "title": "Tetris",
-      "category": "plataforma",
-      "image": null,
-      "launchDate": "1986-08-13T00:00:00.000Z",
-      "platforms": [],
-      "price": 1
-    },
-    {
-      "title": "Super Mario 2",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnWkg0kaGR2SE4gTyWdSvkc6LX7vw7Gmg6TEHohnQ3zimuPscntOs0uQ&s",
-      "launchDate": "0430-01-20T03:00:00.000Z",
-      "price": "200,00",
-      "category": "2D, Arcade",
-      "platforms": [
-        {
-          "id": "4c22",
-          "name": "Playstation 5",
-          "manufacture": "Sony"
-        },
-        {
-          "id": "059d",
-          "name": "Xbox",
-          "manufacture": "Microsoft"
-        },
-        {
-          "id": "a09e",
-          "name": "PC"
-        }
-      ],
-      "id": "204e"
-    },
-    {
-      "title": "Super Mario 3",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnWkg0kaGR2SE4gTyWdSvkc6LX7vw7Gmg6TEHohnQ3zimuPscntOs0uQ&s",
-      "launchDate": "0404-01-08T03:00:00.000Z",
-      "price": 99.99,
-      "category": "2D",
-      "platforms": [
-        {
-          "id": "99ed",
-          "name": "Super Nintendo",
-          "manufacture": "Nintendo"
-        },
-        {
-          "id": "a09e",
-          "name": "PC"
-        }
-      ],
-      "id": "9578"
-    },
-    {
-      "title": "Chess",
-      "image": "http://",
-      "launchDate": "2001-01-01T03:00:00.000Z",
-      "price": 111,
-      "category": "Tabuleiro",
-      "platforms": [
-        {
-          "id": "a09e",
-          "name": "PC"
-        }
-      ],
-      "id": "ad25"
-    },
-    {
-      "title": "Chess 2",
-      "image": "http://",
-      "launchDate": "2025-02-02T03:00:00.000Z",
-      "price": 2.97,
-      "category": "Tabuleiro",
-      "platforms": [
-        {
-          "id": "a09e",
-          "name": "PC"
-        }
-      ],
-      "id": "ef7c"
-    },
-    {
-      "title": "Chess 3",
-      "image": "http:///",
-      "launchDate": "2021-10-10T03:00:00.000Z",
-      "price": 20.12,
-      "category": "Tabuleiro",
-      "platforms": [
-        {
-          "id": "a09e",
-          "name": "PC"
-        }
-      ],
-      "id": "c754"
-    }
-  ],
-  "platforms": [
-    {
-      "id": "4c22",
-      "name": "Playstation 5",
-      "manufacture": "Sony"
-    },
-    {
-      "id": "059d",
-      "name": "Xbox",
-      "manufacture": "Microsoft"
-    },
-    {
-      "id": "99ea",
-      "name": "Nintendo Switch",
-      "manufacture": "Nintendo"
-    },
-    {
-      "id": "99ed",
-      "name": "Super Nintendo",
-      "manufacture": "Nintendo"
-    },
-    {
-      "id": "a09e",
-      "name": "PC"
+      "name": "Google",
+      "country": "Estados Unidos"
     }
   ]
 }

@@ -4,10 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GamesPageRoutingModule } from './games-routing.module';
+import { PhonesPageRoutingModule } from './phones-routing.module';
 
-import { GamesPage } from './games.page';
-import { GameFormComponent } from './game-form/game-form.component';
+import { PhonesPage } from './phones.page';
+import { PhoneFormComponent } from './phone-form/phone-form.component';
 import { MaskitoDirective } from '@maskito/angular';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,15 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     FormsModule,
     IonicModule,
-    GamesPageRoutingModule,
+    PhonesPageRoutingModule,
     MaskitoDirective,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
   declarations: [
-    GamesPage,
-    GameFormComponent,
+    PhonesPage,
+    PhoneFormComponent,
   ]
 })
-export class GamesPageModule {}
+export class PhonesPageModule {}
