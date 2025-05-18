@@ -39,13 +39,35 @@
         <ion-item>
           <ion-input formControlName="releaseDate" labelPlacement="floating" label="Lançamento" [maskito]="dateMask"
             [maskitoElement]="maskitoElement" />
+          <p>
+          @if(hasError('releaseDate', 'required')) {
+            O campo é obrigatório
+          }
+          </p>
         </ion-item>
         <ion-item>
           <ion-input formControlName="price" labelPlacement="floating" label="Preço" type="text" [maskito]="priceMask"
             [maskitoElement]="maskitoElement" />
+          <p>
+          @if(hasError('price', 'required')) {
+            O campo é obrigatório
+          }
+          @if(hasError('price', 'min')) {
+            O preço deve ser maior ou igual a zero
+          }
+          </p>
         </ion-item>
         <ion-item>
-          <ion-input formControlName="category" labelPlacement="floating" label="Categoria" type="text" />
+          <ion-select formControlName="category" labelPlacement="floating" label="Categoria">
+            @for(category of categories; track category) {
+              <ion-select-option [value]="category">{{ category }}</ion-select-option>
+            }
+          </ion-select>
+          <p>
+          @if(hasError('category', 'required')) {
+            O campo é obrigatório
+          }
+          </p>
         </ion-item>
         <ion-item>
           <ion-select formControlName="brands" [compareWith]="compareWith" label="Marcas" label-placement="floating" multiple="true">
@@ -53,6 +75,11 @@
               <ion-select-option [value]="brand">{{brand.name}}</ion-select-option>
             }
           </ion-select>
+          <p>
+          @if(hasError('brands', 'required')) {
+            O campo é obrigatório
+          }
+          </p>
         </ion-item>
       </ion-list>
       <ion-fab vertical="bottom" horizontal="end" slot="fixed">

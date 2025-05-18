@@ -20,6 +20,18 @@ export class PhoneFormComponent implements OnInit {
   dateMask = dateMask;
   priceMask = priceMask;
   maskitoElement = maskitoElement;
+  
+  // Lista de categorias predefinidas em português do Brasil
+  categories: string[] = [
+    'Smartphone', 
+    'Celular Básico', 
+    'Premium', 
+    'Intermediário', 
+    'Entrada', 
+    'Gamer', 
+    'Corporativo', 
+    'Resistente'
+  ];
 
   phoneForm: FormGroup = new FormGroup({
     model: new FormControl('', [
