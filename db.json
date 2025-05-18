@@ -1,7 +1,6 @@
 {
   "phones": [
     {
-      "id": "1",
       "model": "Galaxy S23",
       "image": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s911bzgrzto/gallery/br-galaxy-s23-s911-sm-s911bzgrzto-534863-534863-535033-thumb-535033",
       "releaseDate": "2023-02-01T03:00:00.000Z",
@@ -13,7 +12,8 @@
           "name": "Samsung",
           "country": "Coreia do Sul"
         }
-      ]
+      ],
+      "id": "1"
     },
     {
       "model": "iPhone 15 Pro",
@@ -70,7 +70,6 @@
   ],
   "accessories": [
     {
-      "id": "1",
       "name": "Capa Protetora Premium",
       "description": "Capa de silicone resistente a impactos para proteção completa do seu smartphone.",
       "price": 49.9,
@@ -82,7 +81,8 @@
           "model": "Galaxy S23"
         }
       ],
-      "stock": 25
+      "stock": 25,
+      "id": "1"
     },
     {
       "id": "2",
@@ -377,6 +377,41 @@
         }
       ],
       "stock": 30
+    }
+  ],
+  "stores": [
+    {
+      "name": "Loja Centro",
+      "address": "Av. Paulista, 1000",
+      "city": "São Paulo",
+      "state": "SP",
+      "phone": "(11) 99999-9999",
+      "manager": "João Silva",
+      "isHeadquarters": true,
+      "status": "active",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Loja Shopping",
+      "address": "Av. das Américas, 500",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "phone": "(21) 88888-8888",
+      "manager": "Maria Souza",
+      "isHeadquarters": false,
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Loja Norte",
+      "address": "Rua das Flores, 123",
+      "city": "Manaus",
+      "state": "AM",
+      "phone": "(92) 77777-7777",
+      "manager": "Carlos Oliveira",
+      "isHeadquarters": false,
+      "status": "underMaintenance"
     }
   ]
 }

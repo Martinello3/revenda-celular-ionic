@@ -26,7 +26,12 @@ const routes: Routes = [
   {
     path: 'accessories',
     loadChildren: () => import('./accessories/accessories.module').then(m => m.AccessoriesPageModule)
+  },
+  {
+    path: 'stores',
+    loadChildren: () => import('./stores/stores.module').then( m => m.StoresPageModule)
   }
+
 ];
 
 @NgModule({

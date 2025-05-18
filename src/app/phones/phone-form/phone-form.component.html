@@ -8,57 +8,58 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="phoneForm">
-    <ion-list>
-      <ion-item>
-        <ion-input formControlName="model" labelPlacement="floating" label="Modelo: " type="text"></ion-input>
-        <p>
-        @if(hasError('model', 'required')) {
-          O campo é obrigatório
-        }
-        @if(hasError('model', 'minlength')) {
-          O campo deve ter no mínimo 3 caracteres
-        }
-        @if(hasError('model', 'maxlength')) {
-          O campo deve ter no máximo 150 caracteres
-        }
-        </p>
-      </ion-item>
-      <ion-item>
-        <ion-input formControlName="image" labelPlacement="floating" label="Imagem (URL)" type="url"></ion-input>
-        <p>
-        @if(hasError('image', 'required')) {
-          O campo é obrigatório
-        }
-        @if(hasError('image', 'invalidUrl')) {
-          O campo de imagem deve ser uma URL válida
-        }
-        </p>
-      </ion-item>
-      <ion-item>
-        <ion-input formControlName="releaseDate" labelPlacement="floating" label="Lançamento" [maskito]="dateMask"
-          [maskitoElement]="maskitoElement" />
-      </ion-item>
-      <ion-item>
-        <ion-input formControlName="price" labelPlacement="floating" label="Preço" type="text" [maskito]="priceMask"
-          [maskitoElement]="maskitoElement" />
-      </ion-item>
-      <ion-item>
-        <ion-input formControlName="category" labelPlacement="floating" label="Categoria" type="text" />
-      </ion-item>
-      <ion-item>
-        <ion-select formControlName="brands" [compareWith]="compareWith" label="Marcas" label-placement="floating" multiple="true">
-          @for(brand of brands; track brand) {
-            <ion-select-option [value]="brand">{{brand.name}}</ion-select-option>
+  <div class="form-container">
+    <form [formGroup]="phoneForm">
+      <ion-list>
+        <ion-item>
+          <ion-input formControlName="model" labelPlacement="floating" label="Modelo: " type="text"></ion-input>
+          <p>
+          @if(hasError('model', 'required')) {
+            O campo é obrigatório
           }
-        </ion-select>
-      </ion-item>
-    </ion-list>
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button [disabled]="phoneForm.invalid" (click)="save()">
-        <ion-icon name="checkmark"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-  </form>
-
+          @if(hasError('model', 'minlength')) {
+            O campo deve ter no mínimo 3 caracteres
+          }
+          @if(hasError('model', 'maxlength')) {
+            O campo deve ter no máximo 150 caracteres
+          }
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="image" labelPlacement="floating" label="Imagem (URL)" type="url"></ion-input>
+          <p>
+          @if(hasError('image', 'required')) {
+            O campo é obrigatório
+          }
+          @if(hasError('image', 'invalidUrl')) {
+            O campo de imagem deve ser uma URL válida
+          }
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="releaseDate" labelPlacement="floating" label="Lançamento" [maskito]="dateMask"
+            [maskitoElement]="maskitoElement" />
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="price" labelPlacement="floating" label="Preço" type="text" [maskito]="priceMask"
+            [maskitoElement]="maskitoElement" />
+        </ion-item>
+        <ion-item>
+          <ion-input formControlName="category" labelPlacement="floating" label="Categoria" type="text" />
+        </ion-item>
+        <ion-item>
+          <ion-select formControlName="brands" [compareWith]="compareWith" label="Marcas" label-placement="floating" multiple="true">
+            @for(brand of brands; track brand) {
+              <ion-select-option [value]="brand">{{brand.name}}</ion-select-option>
+            }
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button [disabled]="phoneForm.invalid" (click)="save()">
+          <ion-icon name="checkmark"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </form>
+  </div>
 </ion-content>
