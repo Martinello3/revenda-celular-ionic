@@ -600,7 +600,7 @@
         "id": "1"
       },
       "paymentMethod": "pix",
-      "status": "completed",
+      "status": "canceled",
       "seller": "Marcos",
       "items": [
         {
