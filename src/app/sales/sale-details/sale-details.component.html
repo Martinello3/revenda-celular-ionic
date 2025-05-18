@@ -40,7 +40,12 @@
             <ion-label>
               <h2>Loja</h2>
               <p>{{ sale.store.name }}</p>
-              <p>{{ sale.store.address }}, {{ sale.store.city }}/{{ sale.store.state }}</p>
+              <p *ngIf="sale.store.address">{{ sale.store.address }}</p>
+              <p *ngIf="sale.store.city || sale.store.state">
+                {{ sale.store.city || '' }}{{ sale.store.city && sale.store.state ? '/' : '' }}{{ sale.store.state || '' }}
+              </p>
+              <p *ngIf="sale.store.phone">Telefone: {{ sale.store.phone }}</p>
+              <p *ngIf="sale.store.manager">Gerente: {{ sale.store.manager }}</p>
             </ion-label>
           </ion-item>
           

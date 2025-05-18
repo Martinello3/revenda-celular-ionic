@@ -3,7 +3,7 @@ import { Store } from "src/app/stores/models/store.type";
 import { SaleItem } from "./sale-item.type";
 
 export type Sale = {
-  id?: number;
+  id?: number | string;
   date: Date | string;
   customer: Customer;
   store: Store;

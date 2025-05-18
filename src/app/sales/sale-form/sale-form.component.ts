@@ -22,7 +22,7 @@ import { priceMask, maskitoElement, parseNumberMask, formatNumberMask } from 'sr
 })
 export class SaleFormComponent implements OnInit {
   saleForm: FormGroup;
-  saleId: number | null = null;
+  saleId: string | number | null = null;
   customersList: Customer[] = [];
   storesList: Store[] = [];
   phonesList: Phone[] = [];
@@ -55,7 +55,7 @@ export class SaleFormComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
-        this.saleId = +id;
+        this.saleId = id; // Não precisa converter para número
         this.loadSale(this.saleId);
       } else {
         // Set default date to today
@@ -87,13 +87,33 @@ export class SaleFormComponent implements OnInit {
   }
 
   createItemForm(): FormGroup {
-    return this.fb.group({
+    const itemForm = this.fb.group({
       productType: ['phone', Validators.required],
       product: ['', Validators.required],
       quantity: [1, [Validators.required, Validators.min(1)]],
-      unitPrice: [0, Validators.required],
-      subtotal: [0]
+      unitPrice: ['0', Validators.required], 
+      subtotal: ['0'] 
     });
+
+    
+    itemForm.get('product')?.valueChanges.subscribe((product: Phone | Accessory | any) => {
+      if (product && typeof product === 'object' && 'price' in product) {
+        const price = product.price ? formatNumberMask(parseFloat(product.price)) : '0';
+        itemForm.get('unitPrice')?.setValue(price);
+        
+        this.updateItemSubtotal(itemForm);
+      }
+    });
+
+    itemForm.get('quantity')?.valueChanges.subscribe(() => {
+      this.updateItemSubtotal(itemForm);
+    });
+    
+    itemForm.get('unitPrice')?.valueChanges.subscribe(() => {
+      this.updateItemSubtotal(itemForm);
+    });
+
+    return itemForm;
   }
 
   addItem() {
@@ -108,7 +128,7 @@ export class SaleFormComponent implements OnInit {
     return this.itemsFormArray.at(index).get('productType')?.value || 'phone';
   }
 
-  loadSale(id: number) {
+  loadSale(id: string | number) {
     this.saleService.getById(id).subscribe({
       next: (sale) => {
         Promise.all([
@@ -196,17 +216,22 @@ export class SaleFormComponent implements OnInit {
     });
   }
 
+  updateItemSubtotal(itemForm: FormGroup): void {
+    const quantity = +itemForm.get('quantity')?.value || 0;
+    const unitPrice = parseNumberMask(itemForm.get('unitPrice')?.value) || 0;
+    const subtotal = quantity * unitPrice;
+    
+    itemForm.get('subtotal')?.setValue(formatNumberMask(subtotal), { emitEvent: false });
+    this.updateTotals();
+  }
+
   updateTotals() {
     let total = 0;
     
     for (let i = 0; i < this.itemsFormArray.length; i++) {
       const itemForm = this.itemsFormArray.at(i);
-      const quantity = +itemForm.get('quantity')?.value || 0;
-      const unitPrice = parseNumberMask(itemForm.get('unitPrice')?.value) || 0;
-      const subtotal = quantity * unitPrice;
-      
-      itemForm.get('subtotal')?.setValue(formatNumberMask(subtotal), { emitEvent: false });
-      total += subtotal;
+      const subtotalValue = parseNumberMask(itemForm.get('subtotal')?.value) || 0;
+      total += subtotalValue;
     }
     
     this.saleForm.get('totalValue')?.setValue(formatNumberMask(total));
@@ -232,9 +257,7 @@ export class SaleFormComponent implements OnInit {
       subtotal: parseNumberMask(item.subtotal)
     }));
     
-    // Criar o objeto sale com o tipo correto para id
     const sale: Sale = {
-      // Se saleId for null, não incluímos a propriedade id, assim ela será undefined
       ...(this.saleId ? { id: this.saleId } : {}),
       date: formValue.date,
       customer: formValue.customer,

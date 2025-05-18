@@ -24,29 +24,35 @@ export class SaleDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.loadSale(+id);
-    } else {
-      this.router.navigate(['/sales']);
-    }
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.loadSale(id);
+      } else {
+        this.router.navigate(['/sales']);
+      }
+    });
   }
 
-  loadSale(id: number) {
+  loadSale(id: string | number) {
     this.saleService.getById(id).subscribe({
       next: (sale) => {
         this.sale = sale;
       },
       error: (error) => {
         console.error('Erro ao carregar venda', error);
-        this.toastController.create({
-          message: 'Erro ao carregar detalhes da venda',
-          duration: 3000,
-          color: 'danger'
-        }).then(toast => toast.present());
+        this.showError('Erro ao carregar detalhes da venda');
         this.router.navigate(['/sales']);
       }
     });
+  }
+
+  private showError(message: string) {
+    this.toastController.create({
+      message: message,
+      duration: 3000,
+      color: 'danger'
+    }).then(toast => toast.present());
   }
 
   getStatusLabel(status: string): string {

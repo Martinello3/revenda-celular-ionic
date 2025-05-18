@@ -647,6 +647,79 @@
         }
       ],
       "totalValue": 8514
+    },
+    {
+      "id": "d2ef",
+      "date": "2025-05-18",
+      "customer": {
+        "name": "João Silva",
+        "email": "joao.silva@email.com",
+        "phone": "(48) 99179-5091",
+        "birthDate": "1985-05-15T03:00:00.000Z",
+        "address": "Rua das Flores, 123 - São Paulo/SP",
+        "customerType": "premium",
+        "active": true,
+        "id": "1"
+      },
+      "store": {
+        "name": "Loja Centro",
+        "address": "Av. Paulista, 1000",
+        "city": "São Paulo",
+        "state": "SP",
+        "phone": "(11) 99999-9999",
+        "manager": "João Silva",
+        "isHeadquarters": true,
+        "status": "active",
+        "id": "1"
+      },
+      "paymentMethod": "pix",
+      "status": "completed",
+      "seller": "teste",
+      "items": [
+        {
+          "product": {
+            "name": "Capa Protetora Premium",
+            "description": "Capa de silicone resistente a impactos para proteção completa do seu smartphone.",
+            "price": 50.5,
+            "category": "Capa",
+            "image": "https://example.com/images/case.jpg",
+            "compatiblePhones": [
+              {
+                "id": "1",
+                "model": "Galaxy S23"
+              }
+            ],
+            "stock": 25,
+            "id": "1"
+          },
+          "productType": "accessory",
+          "quantity": 1,
+          "unitPrice": 50.5,
+          "subtotal": 50.5
+        },
+        {
+          "product": {
+            "model": "iPhone 15 Pro",
+            "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845702708",
+            "releaseDate": "2023-09-22T03:00:00.000Z",
+            "price": 7999.99,
+            "category": "Smartphone",
+            "brands": [
+              {
+                "id": "2",
+                "name": "Apple",
+                "country": "Estados Unidos"
+              }
+            ],
+            "id": "2"
+          },
+          "productType": "phone",
+          "quantity": 2,
+          "unitPrice": 7999.99,
+          "subtotal": 15999.98
+        }
+      ],
+      "totalValue": 16050.48
     }
   ]
 }

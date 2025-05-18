@@ -16,7 +16,7 @@ export class SaleService {
     return this.http.get<Sale[]>(this.apiUrl);
   }
 
-  getById(id: number): Observable<Sale> {
+  getById(id: string | number): Observable<Sale> {
     return this.http.get<Sale>(`${this.apiUrl}/${id}`);
   }
 
@@ -35,7 +35,7 @@ export class SaleService {
     return this.http.put<Sale>(`${this.apiUrl}/${sale.id}`, sale);
   }
 
-  delete(id: number): Observable<void> {
+  delete(id: string | number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
