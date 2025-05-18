@@ -8,9 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   public appPages = [
-    { title: 'Home', url: '/home', icon: 'home'},
-    { title: 'Jogos', url: '/games', icon: 'game-controller' },
-    { title: 'Estúdios', url: '/studios', icon: 'color-palette' },
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Celulares', url: '/phones', icon: 'phone-portrait' },
+    { title: 'Marcas', url: '/brands', icon: 'business' },
+    { title: 'Acessórios', url: '/accessories', icon: 'hardware-chip' },
+    { title: 'Lojas', url: '/stores', icon: 'storefront' },
+    { title: 'Clientes', url: '/customers', icon: 'people' },
+    { title: 'Vendas', url: '/sales', icon: 'cart' }
   ];
 
   constructor() { }

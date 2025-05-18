@@ -8,20 +8,32 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: 'games',
-    loadChildren: () => import('./games/games.module').then( m => m.GamesPageModule)
+    path: 'phones',
+    loadChildren: () => import('./phones/phones.module').then(m => m.PhonesPageModule)
   },
   {
-    path: 'studios',
-    loadChildren: () => import('./studios/studios.module').then( m => m.StudiosPageModule)
+    path: 'brands',
+    loadChildren: () => import('./brands/brands.module').then(m => m.BrandsPageModule)
+  },
+  {
+    path: 'accessories',
+    loadChildren: () => import('./accessories/accessories.module').then(m => m.AccessoriesPageModule)
+  },
+  {
+    path: 'stores',
+    loadChildren: () => import('./stores/stores.module').then( m => m.StoresPageModule)
+  },
+  {
+    path: 'customers',
+    loadChildren: () => import('./customers/customers.module').then( m => m.CustomersPageModule)
+  },
+  {
+    path: 'sales',
+    loadChildren: () => import('./sales/sales.module').then( m => m.SalesPageModule)
   }
 ];
 
