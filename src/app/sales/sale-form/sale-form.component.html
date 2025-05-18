@@ -12,7 +12,7 @@
     <form [formGroup]="saleForm" (ngSubmit)="save()">
       <ion-list>
         <ion-item>
-          <ion-input type="date" formControlName="date" labelPlacement="floating" label="Data da Venda"></ion-input>
+          <ion-input type="date" formControlName="date" labelPlacement="floating" label="Data da Venda" [max]="maxDate"></ion-input>
           <p>
             @if(hasError('date', 'required')) {
               A data da venda é obrigatória

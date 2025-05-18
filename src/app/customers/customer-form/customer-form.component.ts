@@ -53,7 +53,6 @@ export class CustomerFormComponent implements OnInit {
           if (customer) {
             this.customerId = customerId;
             
-            // Formatar a data se necessário
             if (customer.birthDate instanceof Date) {
               customer.birthDate = formatDateMask(customer.birthDate);
             }
@@ -87,7 +86,6 @@ export class CustomerFormComponent implements OnInit {
   save() {
     let { value } = this.customerForm;
     
-    // Converter a data de nascimento
     if (value.birthDate) {
       const parsedDate = parseDateMask(value.birthDate);
       if (parsedDate) {

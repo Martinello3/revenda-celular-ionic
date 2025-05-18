@@ -31,6 +31,7 @@ export class SaleFormComponent implements OnInit {
   saleStatus = SaleStatus;
   priceMask = priceMask;
   maskitoElement = maskitoElement;
+  maxDate: string;
 
   constructor(
     private fb: FormBuilder,
@@ -44,6 +45,7 @@ export class SaleFormComponent implements OnInit {
     private toastController: ToastController
   ) {
     this.saleForm = this.createForm();
+    this.maxDate = new Date().toISOString().split('T')[0];
   }
 
   ngOnInit() {
@@ -55,15 +57,13 @@ export class SaleFormComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
-        this.saleId = id; // Não precisa converter para número
+        this.saleId = id;
         this.loadSale(this.saleId);
       } else {
-        // Set default date to today
         this.saleForm.get('date')?.setValue(new Date().toISOString().split('T')[0]);
       }
     });
 
-    // Listen for changes in items to update totals
     this.itemsFormArray.valueChanges.subscribe(() => {
       this.updateTotals();
     });
@@ -154,7 +154,6 @@ export class SaleFormComponent implements OnInit {
             this.itemsFormArray.push(itemForm);
           });
           
-          // Set main form values
           this.saleForm.patchValue({
             date: new Date(sale.date).toISOString().split('T')[0],
             customer: sale.customer,
@@ -248,7 +247,6 @@ export class SaleFormComponent implements OnInit {
     
     const formValue = this.saleForm.value;
     
-    // Process items
     const items = formValue.items.map((item: any) => ({
       product: item.product,
       productType: item.productType,

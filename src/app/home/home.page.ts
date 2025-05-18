@@ -17,20 +17,16 @@ interface TopProduct {
   standalone: false,
 })
 export class HomePage implements OnInit {
-  // Resumo financeiro
   totalRevenue: number = 0;
   monthlyRevenue: number = 0;
   weeklyRevenue: number = 0;
   
-  // Estatísticas de vendas
   totalSalesMonth: number = 0;
   totalSalesWeek: number = 0;
   averageTicket: number = 0;
-  
-  // Produtos mais vendidos
+
   topProducts: TopProduct[] = [];
   
-  // Últimas vendas
   recentSales: Sale[] = [];
   
   constructor(private saleService: SaleService) {}

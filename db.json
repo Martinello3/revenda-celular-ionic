@@ -720,6 +720,87 @@
         }
       ],
       "totalValue": 16050.48
+    },
+    {
+      "id": "5b3f",
+      "date": "2025-05-20",
+      "customer": {
+        "name": "João Silva",
+        "email": "joao.silva@email.com",
+        "phone": "(48) 99179-5091",
+        "birthDate": "1985-05-15T03:00:00.000Z",
+        "address": "Rua das Flores, 123 - São Paulo/SP",
+        "customerType": "premium",
+        "active": true,
+        "id": "1"
+      },
+      "store": {
+        "name": "Loja Centro",
+        "address": "Av. Paulista, 1000",
+        "city": "São Paulo",
+        "state": "SP",
+        "phone": "(11) 99999-9999",
+        "manager": "João Silva",
+        "isHeadquarters": true,
+        "status": "active",
+        "id": "1"
+      },
+      "paymentMethod": "pix",
+      "status": "completed",
+      "seller": "Marcos",
+      "items": [
+        {
+          "product": {
+            "model": "Galaxy S23",
+            "image": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s911bzgrzto/gallery/br-galaxy-s23-s911-sm-s911bzgrzto-534863-534863-535033-thumb-535033",
+            "releaseDate": "2023-02-01T03:00:00.000Z",
+            "price": 4999.99,
+            "category": "Smartphone",
+            "brands": [
+              {
+                "id": "1",
+                "name": "Samsung",
+                "country": "Coreia do Sul"
+              }
+            ],
+            "id": "1"
+          },
+          "productType": "phone",
+          "quantity": 1,
+          "unitPrice": 4999.99,
+          "subtotal": 4999.99
+        },
+        {
+          "product": {
+            "id": "2",
+            "name": "Carregador Rápido 25W",
+            "description": "Carregador de parede com tecnologia de carregamento rápido para seu smartphone.",
+            "price": 89.9,
+            "category": "Carregador",
+            "image": "https://example.com/images/charger.jpg",
+            "compatiblePhones": [
+              {
+                "id": "1",
+                "model": "Galaxy S23"
+              },
+              {
+                "id": "2",
+                "model": "iPhone 15 Pro"
+              },
+              {
+                "id": "3",
+                "model": "Redmi Note 12"
+              }
+            ],
+            "stock": 10
+          },
+          "productType": "accessory",
+          "quantity": 2,
+          "unitPrice": 89.9,
+          "subtotal": 179.8
+        }
+      ],
+      "totalValue": 5179.79
     }
   ]
 }

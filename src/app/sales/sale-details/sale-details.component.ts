@@ -105,7 +105,6 @@ export class SaleDetailsComponent implements OnInit {
                   color: 'success'
                 }).then(toast => toast.present());
                 
-                // Atualiza o status na interface
                 this.sale.status = 'canceled';
               },
               error: (error) => {
