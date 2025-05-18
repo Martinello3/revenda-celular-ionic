@@ -1,37 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Phone } from '../models/phone.type';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhoneService {
 
-  private readonly API_URL = 'http://localhost:3000/phones';
+  private readonly apiUrl = `${environment.baseUrl}/phones`;
 
   constructor(private http: HttpClient) { }
 
-  getById(phoneId: string) {
-    return this.http.get<Phone>(`${this.API_URL}/${phoneId}`);
+  getById(phoneId: string): Observable<Phone> {
+    return this.http.get<Phone>(`${this.apiUrl}/${phoneId}`);
   }
 
-  getList() {
-    return this.http.get<Phone[]>(this.API_URL)
+  getList(): Observable<Phone[]> {
+    return this.http.get<Phone[]>(this.apiUrl);
   }
 
-  private add(phone: Phone) {
-    return this.http.post<Phone>(this.API_URL, phone);
+  private add(phone: Phone): Observable<Phone> {
+    return this.http.post<Phone>(this.apiUrl, phone);
   }
 
-  private update(phone: Phone) {
-    return this.http.put<Phone>(`${this.API_URL}/${phone.id}`, phone);
+  private update(phone: Phone): Observable<Phone> {
+    return this.http.put<Phone>(`${this.apiUrl}/${phone.id}`, phone);
   }
 
-  save(phone: Phone) {
+  save(phone: Phone): Observable<Phone> {
     return phone.id ? this.update(phone) : this.add(phone);
   }
 
-  remove(phone: Phone) {
-    return this.http.delete<Phone>(`${this.API_URL}/${phone.id}`);
+  remove(phone: Phone): Observable<Phone> {
+    return this.http.delete<Phone>(`${this.apiUrl}/${phone.id}`);
   }
 }

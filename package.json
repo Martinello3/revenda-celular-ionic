@@ -31,8 +31,10 @@
     "@maskito/angular": "^3.8.0",
     "@maskito/core": "^3.8.0",
     "@maskito/kit": "^3.8.0",
+    "@maskito/phone": "^3.8.0",
     "ionicons": "^7.0.0",
     "json-server": "^1.0.0-beta.3",
+    "libphonenumber-js": "^1.12.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

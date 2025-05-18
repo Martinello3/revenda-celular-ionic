@@ -15,28 +15,18 @@
   </ion-header>
 
   <ion-list>
-    
-    @for(phone of phonesList; track phone.model) {
+    @for(phone of phonesList; track phone.id) {
     <ion-item>
-      <ion-thumbnail slot="start">
-        @if(phone.image) {
-        <img [src]="phone.image" />
-        } @else {
-        <img src="https://placehold.co/400" />
-        }
-      </ion-thumbnail>
       <ion-text class="phone-info">
-        <h2>{{phone.id}} - {{ phone.model }}</h2>
-        <h3><strong>Categoria: </strong> {{ phone.category }} </h3>
-        <h4><strong>Lançamento: </strong>
-          {{phone.releaseDate | date: 'dd/MM/yyyy' }}</h4>
-        <h4><strong>Preço: </strong> {{phone.price | currency: 'BRL' }}</h4>
-        <h4><strong>Marcas:</strong>
-          <ul class="brands">
-            @for(brand of phone.brands; track brand) {
-            <li>{{brand.name}} {{brand.country ? '(' + brand.country +')' : ''}}</li>
-            }
-          </ul>
+        <h2>{{ phone.id }} - {{ phone.model }}</h2>
+        <h3><strong>Categoria:</strong> {{ phone.category }}</h3>
+        <h4><strong>Lançamento:</strong> {{ phone.releaseDate | date: 'dd/MM/yyyy' }}</h4>
+        <h4><strong>Preço:</strong> {{ phone.price | currency: 'BRL' }}</h4>
+        <h4>
+          <strong>Marcas:</strong>
+          @for(brand of phone.brands; track brand.id; let last = $last) {
+            {{ brand.name }}{{ !last ? ', ' : '' }}
+          }
         </h4>
         <ion-button size="small" [routerLink]="['edit', phone.id]">
           <ion-icon name="create" slot="start"></ion-icon>

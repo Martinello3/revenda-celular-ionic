@@ -2,29 +2,30 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Accessory } from '../models/accessory.type';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccessoryService {
-  private readonly API_URL = 'http://localhost:3000/accessories';
+  private readonly apiUrl = `${environment.baseUrl}/accessories`;
 
   constructor(private http: HttpClient) { }
 
   getById(accessoryId: string): Observable<Accessory> {
-    return this.http.get<Accessory>(`${this.API_URL}/${accessoryId}`);
+    return this.http.get<Accessory>(`${this.apiUrl}/${accessoryId}`);
   }
 
   getList(): Observable<Accessory[]> {
-    return this.http.get<Accessory[]>(this.API_URL);
+    return this.http.get<Accessory[]>(this.apiUrl);
   }
 
   private add(accessory: Accessory): Observable<Accessory> {
-    return this.http.post<Accessory>(this.API_URL, accessory);
+    return this.http.post<Accessory>(this.apiUrl, accessory);
   }
 
   private update(accessory: Accessory): Observable<Accessory> {
-    return this.http.put<Accessory>(`${this.API_URL}/${accessory.id}`, accessory);
+    return this.http.put<Accessory>(`${this.apiUrl}/${accessory.id}`, accessory);
   }
 
   save(accessory: Accessory): Observable<Accessory> {
@@ -32,6 +33,6 @@ export class AccessoryService {
   }
 
   remove(accessory: Accessory): Observable<Accessory> {
-    return this.http.delete<Accessory>(`${this.API_URL}/${accessory.id}`);
+    return this.http.delete<Accessory>(`${this.apiUrl}/${accessory.id}`);
   }
 }

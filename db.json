@@ -72,7 +72,7 @@
     {
       "name": "Capa Protetora Premium",
       "description": "Capa de silicone resistente a impactos para proteção completa do seu smartphone.",
-      "price": 49.9,
+      "price": 50.5,
       "category": "Capa",
       "image": "https://example.com/images/case.jpg",
       "compatiblePhones": [
@@ -412,6 +412,38 @@
       "manager": "Carlos Oliveira",
       "isHeadquarters": false,
       "status": "underMaintenance"
+    }
+  ],
+  "customers": [
+    {
+      "name": "João Silva",
+      "email": "joao.silva@email.com",
+      "phone": "(48) 99179-5091",
+      "birthDate": "1985-05-15T03:00:00.000Z",
+      "address": "Rua das Flores, 123 - São Paulo/SP",
+      "customerType": "premium",
+      "active": true,
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Maria Oliveira",
+      "email": "maria.oliveira@email.com",
+      "phone": "(21) 97654-3210",
+      "birthDate": "1990-10-20T00:00:00.000Z",
+      "address": "Av. Atlântica, 500 - Rio de Janeiro/RJ",
+      "customerType": "premium",
+      "active": true
+    },
+    {
+      "id": "3",
+      "name": "Carlos Santos",
+      "email": "carlos.santos@email.com",
+      "phone": "(31) 98765-1234",
+      "birthDate": "1978-03-25T00:00:00.000Z",
+      "address": "Rua Direita, 45 - Belo Horizonte/MG",
+      "customerType": "vip",
+      "active": true
     }
   ]
 }

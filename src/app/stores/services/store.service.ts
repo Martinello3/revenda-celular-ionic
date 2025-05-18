@@ -2,29 +2,30 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '../models/store.type';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
-  private readonly API_URL = 'http://localhost:3000/stores';
+  private readonly apiUrl = `${environment.baseUrl}/stores`;
 
   constructor(private http: HttpClient) {}
 
   getList(): Observable<Store[]> {
-    return this.http.get<Store[]>(this.API_URL);
+    return this.http.get<Store[]>(this.apiUrl);
   }
 
   getById(storeId: number): Observable<Store> {
-    return this.http.get<Store>(`${this.API_URL}/${storeId}`);
+    return this.http.get<Store>(`${this.apiUrl}/${storeId}`);
   }
 
   private add(store: Store): Observable<Store> {
-    return this.http.post<Store>(this.API_URL, store);
+    return this.http.post<Store>(this.apiUrl, store);
   }
 
   private update(store: Store): Observable<Store> {
-    return this.http.put<Store>(`${this.API_URL}/${store.id}`, store);
+    return this.http.put<Store>(`${this.apiUrl}/${store.id}`, store);
   }
 
   save(store: Store): Observable<Store> {
@@ -32,6 +33,6 @@ export class StoreService {
   }
 
   remove(store: Store): Observable<Store> {
-    return this.http.delete<Store>(`${this.API_URL}/${store.id}`);
+    return this.http.delete<Store>(`${this.apiUrl}/${store.id}`);
   }
 }

@@ -12,7 +12,8 @@ export class AppComponent {
     { title: 'Celulares', url: '/phones', icon: 'phone-portrait' },
     { title: 'Marcas', url: '/brands', icon: 'business' },
     { title: 'Acessórios', url: '/accessories', icon: 'hardware-chip' },
-    { title: 'Lojas', url: '/stores', icon: 'storefront' }
+    { title: 'Lojas', url: '/stores', icon: 'storefront' },
+    { title: 'Clientes', url: '/customers', icon: 'people' }
   ];
 
   constructor() { }

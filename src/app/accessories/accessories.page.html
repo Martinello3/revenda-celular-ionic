@@ -17,28 +17,20 @@
   <ion-list>
     @for(accessory of accessoriesList; track accessory.id) {
     <ion-item>
-      <ion-thumbnail slot="start">
-        @if(accessory.image) {
-        <img [src]="accessory.image" />
-        } @else {
-        <img src="https://placehold.co/400" />
-        }
-      </ion-thumbnail>
       <ion-text class="accessory-info">
-        <h2>{{accessory.id}} - {{ accessory.name }}</h2>
-        <h3><strong>Categoria: </strong> {{ accessory.category }} </h3>
-        <h4><strong>Preço: </strong> {{accessory.price | currency: 'BRL' }}</h4>
-        <h4><strong>Estoque: </strong> {{ accessory.stock }} unidades</h4>
-        <h4><strong>Descrição: </strong> {{ accessory.description }}</h4>
-        @if(accessory.compatiblePhones && accessory.compatiblePhones.length > 0) {
-        <h4><strong>Compatível com:</strong>
-          <ul class="phones">
-            @for(phone of accessory.compatiblePhones; track phone.id) {
-            <li>{{phone.model}}</li>
+        <h2>{{ accessory.id }} - {{ accessory.name }}</h2>
+        <h3><strong>Categoria:</strong> {{ accessory.category }}</h3>
+        <h4><strong>Preço:</strong> {{ accessory.price | currency: 'BRL' }}</h4>
+        <h4><strong>Compatível com:</strong> 
+          @if(accessory.compatiblePhones && accessory.compatiblePhones.length > 0) {
+            @for(phone of accessory.compatiblePhones; track phone.id; let last = $last) {
+              {{ phone.model }}{{ !last ? ', ' : '' }}
             }
-          </ul>
+          } @else {
+            Todos os modelos
+          }
         </h4>
-        }
+        <h4><strong>Estoque:</strong> {{ accessory.stock }}</h4>
         <ion-button size="small" [routerLink]="['edit', accessory.id]">
           <ion-icon name="create" slot="start"></ion-icon>
           Editar
