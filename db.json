@@ -412,6 +412,17 @@
       "manager": "Carlos Oliveira",
       "isHeadquarters": false,
       "status": "underMaintenance"
+    },
+    {
+      "id": "fdfb",
+      "name": "Loja teste",
+      "address": "Rua teste",
+      "city": "Criciúma",
+      "state": "SC",
+      "phone": "48123456789",
+      "manager": "Marcos leopoldo",
+      "isHeadquarters": true,
+      "status": "active"
     }
   ],
   "customers": [
@@ -444,6 +455,198 @@
       "address": "Rua Direita, 45 - Belo Horizonte/MG",
       "customerType": "vip",
       "active": true
+    },
+    {
+      "id": "44e8",
+      "name": "Teste",
+      "email": "teste@gmail.com",
+      "phone": "(48) 12345-6789",
+      "birthDate": "2001-05-18T03:00:00.000Z",
+      "address": "Rua teste",
+      "customerType": "regular",
+      "active": true
+    }
+  ],
+  "sales": [
+    {
+      "id": "1",
+      "date": "2023-11-15T10:30:00.000Z",
+      "customer": {
+        "id": "1",
+        "name": "João Silva",
+        "email": "joao.silva@email.com"
+      },
+      "store": {
+        "id": "1",
+        "name": "Loja Centro"
+      },
+      "items": [
+        {
+          "product": {
+            "id": "1",
+            "model": "Galaxy S23"
+          },
+          "productType": "phone",
+          "quantity": 1,
+          "unitPrice": 4999.99,
+          "subtotal": 4999.99
+        },
+        {
+          "product": {
+            "id": "1",
+            "name": "Capa Protetora Premium"
+          },
+          "productType": "accessory",
+          "quantity": 1,
+          "unitPrice": 50.5,
+          "subtotal": 50.5
+        }
+      ],
+      "totalValue": 5050.49,
+      "paymentMethod": "credit",
+      "status": "canceled",
+      "seller": "Carlos Vendedor"
+    },
+    {
+      "id": "2",
+      "date": "2023-12-05T14:45:00.000Z",
+      "customer": {
+        "id": "2",
+        "name": "Maria Oliveira",
+        "email": "maria.oliveira@email.com"
+      },
+      "store": {
+        "id": "2",
+        "name": "Loja Shopping"
+      },
+      "items": [
+        {
+          "product": {
+            "id": "2",
+            "model": "iPhone 15 Pro"
+          },
+          "productType": "phone",
+          "quantity": 1,
+          "unitPrice": 7999.99,
+          "subtotal": 7999.99
+        },
+        {
+          "product": {
+            "id": "10",
+            "name": "Carregador Sem Fio"
+          },
+          "productType": "accessory",
+          "quantity": 1,
+          "unitPrice": 119.9,
+          "subtotal": 119.9
+        }
+      ],
+      "totalValue": 8119.89,
+      "paymentMethod": "pix",
+      "status": "completed",
+      "seller": "Ana Vendedora"
+    },
+    {
+      "id": "3",
+      "date": "2024-01-20T09:15:00.000Z",
+      "customer": {
+        "id": "3",
+        "name": "Carlos Santos",
+        "email": "carlos.santos@email.com"
+      },
+      "store": {
+        "id": "1",
+        "name": "Loja Centro"
+      },
+      "items": [
+        {
+          "product": {
+            "id": "3",
+            "model": "Redmi Note 12"
+          },
+          "productType": "phone",
+          "quantity": 1,
+          "unitPrice": 1499.99,
+          "subtotal": 1499.99
+        }
+      ],
+      "totalValue": 1499.99,
+      "paymentMethod": "debit",
+      "status": "pending",
+      "seller": "Pedro Vendedor"
+    },
+    {
+      "id": "d7b4",
+      "date": "2025-05-18",
+      "customer": {
+        "id": "44e8",
+        "name": "Teste",
+        "email": "teste@gmail.com",
+        "phone": "(48) 12345-6789",
+        "birthDate": "2001-05-18T03:00:00.000Z",
+        "address": "Rua teste",
+        "customerType": "regular",
+        "active": true
+      },
+      "store": {
+        "name": "Loja Centro",
+        "address": "Av. Paulista, 1000",
+        "city": "São Paulo",
+        "state": "SP",
+        "phone": "(11) 99999-9999",
+        "manager": "João Silva",
+        "isHeadquarters": true,
+        "status": "active",
+        "id": "1"
+      },
+      "paymentMethod": "pix",
+      "status": "completed",
+      "seller": "Marcos",
+      "items": [
+        {
+          "product": {
+            "name": "Capa Protetora Premium",
+            "description": "Capa de silicone resistente a impactos para proteção completa do seu smartphone.",
+            "price": 50.5,
+            "category": "Capa",
+            "image": "https://example.com/images/case.jpg",
+            "compatiblePhones": [
+              {
+                "id": "1",
+                "model": "Galaxy S23"
+              }
+            ],
+            "stock": 25,
+            "id": "1"
+          },
+          "productType": "accessory",
+          "quantity": 2,
+          "unitPrice": 7,
+          "subtotal": 14
+        },
+        {
+          "product": {
+            "model": "Galaxy S23",
+            "image": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s911bzgrzto/gallery/br-galaxy-s23-s911-sm-s911bzgrzto-534863-534863-535033-thumb-535033",
+            "releaseDate": "2023-02-01T03:00:00.000Z",
+            "price": 4999.99,
+            "category": "Smartphone",
+            "brands": [
+              {
+                "id": "1",
+                "name": "Samsung",
+                "country": "Coreia do Sul"
+              }
+            ],
+            "id": "1"
+          },
+          "productType": "phone",
+          "quantity": 1,
+          "unitPrice": 8500,
+          "subtotal": 8500
+        }
+      ],
+      "totalValue": 8514
     }
   ]
 }

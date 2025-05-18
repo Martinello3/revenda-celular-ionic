@@ -18,7 +18,7 @@
     @for(brand of brandsList; track brand.id) {
     <ion-item>
       <ion-text class="brand-info">
-        <h2>{{ brand.id }} - {{ brand.name }}</h2>
+        <h2>{{ brand.name }}</h2>
         <h3><strong>País:</strong> {{ brand.country }}</h3>
         <ion-button size="small" [routerLink]="['edit', brand.id]">
           <ion-icon name="create" slot="start"></ion-icon>

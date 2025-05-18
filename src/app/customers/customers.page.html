@@ -18,7 +18,7 @@
     @for(customer of customersList; track customer.id) {
     <ion-item>
       <ion-text class="customer-info">
-        <h2>{{ customer.id }} - {{ customer.name }}</h2>
+        <h2>{{ customer.name }}</h2>
         <h3><strong>Email:</strong> {{ customer.email }}</h3>
         <h4><strong>Telefone:</strong> {{ customer.phone }}</h4>
         <h4><strong>Data de Nascimento:</strong> {{ customer.birthDate | date: 'dd/MM/yyyy' }}</h4>

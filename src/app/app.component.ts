@@ -13,7 +13,8 @@ export class AppComponent {
     { title: 'Marcas', url: '/brands', icon: 'business' },
     { title: 'Acessórios', url: '/accessories', icon: 'hardware-chip' },
     { title: 'Lojas', url: '/stores', icon: 'storefront' },
-    { title: 'Clientes', url: '/customers', icon: 'people' }
+    { title: 'Clientes', url: '/customers', icon: 'people' },
+    { title: 'Vendas', url: '/sales', icon: 'cart' }
   ];
 
   constructor() { }

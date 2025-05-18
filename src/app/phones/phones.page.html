@@ -18,7 +18,7 @@
     @for(phone of phonesList; track phone.id) {
     <ion-item>
       <ion-text class="phone-info">
-        <h2>{{ phone.id }} - {{ phone.model }}</h2>
+        <h2>{{ phone.model }}</h2>
         <h3><strong>Categoria:</strong> {{ phone.category }}</h3>
         <h4><strong>Lançamento:</strong> {{ phone.releaseDate | date: 'dd/MM/yyyy' }}</h4>
         <h4><strong>Preço:</strong> {{ phone.price | currency: 'BRL' }}</h4>

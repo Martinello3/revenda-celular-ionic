@@ -90,6 +90,11 @@ export class AccessoryFormComponent implements OnInit {
     return o1 && o2 ? o1.id === o2.id : o1 === o2;
   }
 
+  hasError(field: string, error: string): boolean {
+    const formControl = this.accessoryForm.get(field);
+    return !!formControl?.touched && !!formControl?.errors?.[error];
+  }
+
   save() {
     let { value } = this.accessoryForm;
     if (value.price) {

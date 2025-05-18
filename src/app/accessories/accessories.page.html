@@ -18,7 +18,7 @@
     @for(accessory of accessoriesList; track accessory.id) {
     <ion-item>
       <ion-text class="accessory-info">
-        <h2>{{ accessory.id }} - {{ accessory.name }}</h2>
+        <h2>{{ accessory.name }}</h2>
         <h3><strong>Categoria:</strong> {{ accessory.category }}</h3>
         <h4><strong>Preço:</strong> {{ accessory.price | currency: 'BRL' }}</h4>
         <h4><strong>Compatível com:</strong> 
